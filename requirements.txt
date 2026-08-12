@@ -1,0 +1,7 @@
+# Minimal Python dependencies
+
+discord.py>=2.0.0
+aiosqlite>=0.18.0
+python-dotenv>=1.0.0
+APScheduler>=3.10.0
+Pillow>=9.0.0

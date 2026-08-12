@@ -1,0 +1,13 @@
+# Ignore environment and data
+.env
+data/bot.db
+data/backups/
+data/transcripts/
+data/logs/
+data/images/
+/data/config/
+__pycache__/
+*.pyc
+.vscode/
+venv/
+.env
