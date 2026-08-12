@@ -17,3 +17,19 @@ def is_owner():
         return ctx.author.id == app.owner.id
 
     return commands.check(predicate)
+
+
+def is_dev():
+    async def predicate(ctx: commands.Context):
+        # allow IDs in BOT_OWNER_IDS env or application owner
+        bot = ctx.bot
+        try:
+            if hasattr(bot, "config") and getattr(bot.config, "BOT_OWNER_IDS", None):
+                if ctx.author.id in bot.config.BOT_OWNER_IDS:
+                    return True
+        except Exception:
+            pass
+        app = await bot.application_info()
+        return ctx.author.id == app.owner.id
+
+    return commands.check(predicate)
